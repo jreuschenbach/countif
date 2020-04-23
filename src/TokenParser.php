@@ -4,11 +4,11 @@ namespace jr\countif;
 
 class TokenParser
 {
-    /** @var Tokenizer */
-    private $_pTokenizer = null;
+    /** @var Tokens */
+    private $_pTokens = null;
 
-    public function __construct(Tokenizer $pTokenizer)
+    public function __construct(Tokens $pTokenizer)
     {
-        $this->_pTokenizer = $pTokenizer;
+        $this->_pTokens = $pTokenizer;
     }
 }

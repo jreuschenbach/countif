@@ -2,13 +2,13 @@
 
 use PHPUnit\Framework\TestCase;
 use jr\countif\TokenParser;
-use jr\countif\Tokenizer;
+use jr\countif\Tokens;
 
 class TokenParserTest extends TestCase
 {
     public function testInstance(): void
     {
-        $pTokenizer = new Tokenizer();
-        $this->assertInstanceOf(TokenParser::class, new TokenParser($pTokenizer));
+        $pTokens = new Tokens();
+        $this->assertInstanceOf(TokenParser::class, new TokenParser($pTokens));
     }
 }
