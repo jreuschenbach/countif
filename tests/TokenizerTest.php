@@ -5,12 +5,12 @@ use jr\countif\Tokenizer;
 
 class TokenizerTest extends TestCase
 {
-    public function testInstance()
+    public function testInstance(): void
     {
         $this->assertInstanceOf(Tokenizer::class, new Tokenizer());
     }
 
-    public function testTokenizing()
+    public function testTokenizing(): void
     {
         $pTokenizer = new Tokenizer();
         $testCode = 'echo "Hallo Welt!";';
