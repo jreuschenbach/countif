@@ -1,2 +1,2 @@
 # countif
-test-project / count som eifs
+test-project / count some ifs
