@@ -9,4 +9,11 @@ class TokenizerTest extends TestCase
     {
         $this->assertInstanceOf(Tokenizer::class, new Tokenizer());
     }
+
+    public function testTokenizing()
+    {
+        $pTokenizer = new Tokenizer();
+        $testCode = 'echo "Hallo Welt!";';
+        $this->assertIsArray($pTokenizer->scan($testCode));
+    }
 }
