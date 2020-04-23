@@ -2,6 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use jr\countif\Tokenizer;
+use jr\countif\Tokens;
 
 class TokenizerTest extends TestCase
 {
@@ -14,6 +15,6 @@ class TokenizerTest extends TestCase
     {
         $pTokenizer = new Tokenizer();
         $testCode = 'echo "Hallo Welt!";';
-        $this->assertIsArray($pTokenizer->scan($testCode));
+        $this->assertInstanceOf(Tokens::class, $pTokenizer->scan($testCode));
     }
 }

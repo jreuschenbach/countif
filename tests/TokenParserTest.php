@@ -8,7 +8,7 @@ class TokenParserTest extends TestCase
 {
     public function testInstance(): void
     {
-        $pTokens = new Tokens();
+        $pTokens = new Tokens(array());
         $this->assertInstanceOf(TokenParser::class, new TokenParser($pTokens));
     }
 }

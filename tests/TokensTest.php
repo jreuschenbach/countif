@@ -7,6 +7,6 @@ class TokensTest extends TestCase
 {
     public function testInstance()
     {
-        $this->assertInstanceOf(Tokens::class, new Tokens());
+        $this->assertInstanceOf(Tokens::class, new Tokens(array()));
     }
 }

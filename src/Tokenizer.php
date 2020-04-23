@@ -6,6 +6,6 @@ class Tokenizer
 {
     public function scan($code)
     {
-        return token_get_all($code);
+        return new Tokens(token_get_all($code));
     }
 }
