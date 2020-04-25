@@ -9,6 +9,7 @@ class Tokens implements Iterator, Countable
     /**  @var array */
     private $_tokens = array();
 
+    /** @var int */
     private $_index = 0;
 
     public function __construct(array $tokens)
