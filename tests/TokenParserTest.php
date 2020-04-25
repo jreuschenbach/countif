@@ -6,6 +6,7 @@ use jr\countif\Tokens;
 
 class TokenParserTest extends TestCase
 {
+    /** @var int */
     private $_dummyListenerCalled = 0;
 
     public function testInstance(): void
