@@ -23,9 +23,9 @@ class TokenParser
         }
     }
 
-    private function someoneIsListening(Token $pToken): bool
+    private function someoneIsListening(Token $Token): bool
     {
-        return array_key_exists($pToken->getId(), $this->_listener);
+        return array_key_exists($Token->getId(), $this->_listener);
     }
 
     private function callListener(array $listeners): void

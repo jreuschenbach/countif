@@ -18,8 +18,8 @@ class Tokenizer
                 $phpToken = array(self::T_UNKNOWN_TOKEN, $phpToken, null);
             }
 
-            $pToken = new Token($phpToken);
-            $tokenInstances []= $pToken;
+            $Token = new Token($phpToken);
+            $tokenInstances []= $Token;
         }
 
         return new Tokens($tokenInstances);

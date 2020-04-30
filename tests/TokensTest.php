@@ -14,12 +14,12 @@ class TokensTest extends TestCase
 
     public function testIterable()
     {
-        $pTokens = $this->createTokens();
+        $Tokens = $this->createTokens();
 
-        $this->assertCount(3, $pTokens);
+        $this->assertCount(3, $Tokens);
         $iterations = 0;
 
-        foreach ($pTokens as $index => $token)
+        foreach ($Tokens as $index => $token)
         {
             $this->assertInstanceOf(Token::class, $token);
             $iterations++;
@@ -30,11 +30,11 @@ class TokensTest extends TestCase
 
     private function createTokens(): Tokens
     {
-        $pToken1 = new Token(array(T_IF, 'if', 1));
-        $pToken2 = new Token(array(T_IF, 'if', 2));
-        $pToken3 = new Token(array(T_IF, 'if', 3));
-        $pTokens = new Tokens(array($pToken1, $pToken2, $pToken3));
-        return $pTokens;
+        $Token1 = new Token(array(T_IF, 'if', 1));
+        $Token2 = new Token(array(T_IF, 'if', 2));
+        $Token3 = new Token(array(T_IF, 'if', 3));
+        $Tokens = new Tokens(array($Token1, $Token2, $Token3));
+        return $Tokens;
     }
 
     public function testInvalidValidation()

@@ -17,11 +17,11 @@ class TokenParserTest extends TestCase
 
     public function testListener()
     {
-        $pToken = new Token(array(T_IF, 'if', 1));
-        $pTokens = new Tokens(array($pToken));
-        $pTokenParser = new TokenParser();
-        $pTokenParser->addListener(T_IF, array($this, 'dummyListener'));
-        $pTokenParser->parse($pTokens);
+        $Token = new Token(array(T_IF, 'if', 1));
+        $Tokens = new Tokens(array($Token));
+        $TokenParser = new TokenParser();
+        $TokenParser->addListener(T_IF, array($this, 'dummyListener'));
+        $TokenParser->parse($Tokens);
 
         $this->assertEquals(1, $this->_dummyListenerCalled);
     }

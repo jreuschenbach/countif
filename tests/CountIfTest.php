@@ -12,8 +12,8 @@ class CountIfTest extends TestCase
 
     public function testCount()
     {
-        $pCountIf = new CountIf();
+        $CountIf = new CountIf();
 
-        $this->assertEquals(2, $pCountIf->count('resources/2.php'));
+        $this->assertEquals(2, $CountIf->count('resources/2.php'));
     }
 }

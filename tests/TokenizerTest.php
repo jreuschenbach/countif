@@ -13,8 +13,8 @@ class TokenizerTest extends TestCase
 
     public function testTokenizing(): void
     {
-        $pTokenizer = new Tokenizer();
+        $Tokenizer = new Tokenizer();
         $testCode = 'echo "Hallo Welt!";';
-        $this->assertInstanceOf(Tokens::class, $pTokenizer->scan($testCode));
+        $this->assertInstanceOf(Tokens::class, $Tokenizer->scan($testCode));
     }
 }
