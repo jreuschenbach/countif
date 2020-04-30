@@ -22,13 +22,18 @@ class TokenParser
 
     public function parse()
     {
-        foreach ($this->_pTokens as $token)
+        foreach ($this->_pTokens as $pToken)
         {
-            if (is_array($token) && array_key_exists($token[0], $this->_listener))
+            if ($this->someoneIsListening($pToken))
             {
-                $this->callListener($this->_listener[$token[0]]);
+                $this->callListener($this->_listener[$pToken->getId()]);
             }
         }
+    }
+
+    private function someoneIsListening(Token $pToken)
+    {
+        return array_key_exists($pToken->getId(), $this->_listener);
     }
 
     private function callListener(array $listeners)

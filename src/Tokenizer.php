@@ -4,8 +4,17 @@ namespace jr\countif;
 
 class Tokenizer
 {
-    public function scan($code)
+    public function scan($code): Tokens
     {
-        return new Tokens(token_get_all($code));
+        $phpTokens = token_get_all($code);
+        $tokenInstances = [];
+
+        foreach ($phpTokens as $phpToken)
+        {
+            $pToken = new Token($phpToken);
+            $tokenInstances []= $pToken;
+        }
+
+        return new Tokens($tokenInstances);
     }
 }

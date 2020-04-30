@@ -15,6 +15,21 @@ class Tokens implements Iterator, Countable
     public function __construct(array $tokens)
     {
         $this->_tokens = $tokens;
+
+        $this->validate();
+    }
+
+    private function validate()
+    {
+        $checkMethod = function($pToken)
+        {
+            if (!$pToken instanceof Token)
+            {
+                throw new InvalidTokenException();
+            }
+        };
+
+        array_map($checkMethod, $this->_tokens);
     }
 
     public function current()

@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use jr\countif\TokenParser;
 use jr\countif\Tokens;
+use jr\countif\Token;
 
 class TokenParserTest extends TestCase
 {
@@ -17,7 +18,8 @@ class TokenParserTest extends TestCase
 
     public function testListener()
     {
-        $pTokens = new Tokens(array(array(T_IF, 'if', 1)));
+        $pToken = new Token(array(T_IF, 'if', 1));
+        $pTokens = new Tokens(array($pToken));
         $pTokenParser = new TokenParser($pTokens);
         $pTokenParser->addListener(T_IF, array($this, 'dummyListener'));
         $pTokenParser->parse();
