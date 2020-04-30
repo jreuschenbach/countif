@@ -2,6 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use jr\countif\CountIf;
+use jr\countif\InvalidDirectoryException;
 
 class CountIfTest extends TestCase
 {
@@ -14,5 +15,21 @@ class CountIfTest extends TestCase
     {
         $CountIf = new CountIf();
         $this->assertEquals(7, $CountIf->count('resources'));
+    }
+
+    public function testUnreadableDirectory()
+    {
+        $catched = false;
+        $CountIf = new CountIf();
+        try
+        {
+            $CountIf->count('asd');
+        }
+        catch (InvalidDirectoryException $pException)
+        {
+            $catched = true;
+        }
+
+        $this->assertTrue($catched);
     }
 }

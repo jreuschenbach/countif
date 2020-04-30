@@ -18,18 +18,34 @@ class CountIf
 
     private function processDirectory($path)
     {
+        if (!is_dir($path))
+        {
+            throw new InvalidDirectoryException($path);
+        }
+
         $handle = opendir($path);
         while ($filePath = readdir($handle))
         {
-            if (is_file($path.'/'.$filePath))
+            if ($this->isValidPhpFile($path.'/'.$filePath))
             {
                 $this->processFile($path.'/'.$filePath);
             }
-            elseif ($filePath != '.' && $filePath != '..')
+            elseif ($this->isSubDirectory($filePath))
             {
                 $this->processDirectory($path.'/'.$filePath);
             }
         }
+    }
+
+    private function isSubDirectory($dirPath)
+    {
+        return $dirPath != '.' && $dirPath != '..';
+    }
+
+    private function isValidPhpFile($filePath)
+    {
+        return is_file($filePath) &&
+            substr_compare($filePath, '.php', 4);
     }
 
     private function processFile(string $filePath): void
