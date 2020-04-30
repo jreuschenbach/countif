@@ -14,6 +14,8 @@ class CountIfTest extends TestCase
     {
         $CountIf = new CountIf();
 
-        $this->assertEquals(2, $CountIf->count('resources/2.php'));
+        $paths = ['resources/2.php', 'resources/4.php'];
+
+        $this->assertEquals(6, $CountIf->count($paths));
     }
 }
