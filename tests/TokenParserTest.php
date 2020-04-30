@@ -12,17 +12,16 @@ class TokenParserTest extends TestCase
 
     public function testInstance(): void
     {
-        $pTokens = new Tokens(array());
-        $this->assertInstanceOf(TokenParser::class, new TokenParser($pTokens));
+        $this->assertInstanceOf(TokenParser::class, new TokenParser());
     }
 
     public function testListener()
     {
         $pToken = new Token(array(T_IF, 'if', 1));
         $pTokens = new Tokens(array($pToken));
-        $pTokenParser = new TokenParser($pTokens);
+        $pTokenParser = new TokenParser();
         $pTokenParser->addListener(T_IF, array($this, 'dummyListener'));
-        $pTokenParser->parse();
+        $pTokenParser->parse($pTokens);
 
         $this->assertEquals(1, $this->_dummyListenerCalled);
     }

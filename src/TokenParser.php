@@ -4,25 +4,17 @@ namespace jr\countif;
 
 class TokenParser
 {
-    /** @var Tokens */
-    private $_pTokens = null;
-
     /** @var array */
     private $_listener = [];
-
-    public function __construct(Tokens $pTokenizer)
-    {
-        $this->_pTokens = $pTokenizer;
-    }
 
     public function addListener($tokenIndex, $callback): void
     {
         $this->_listener[$tokenIndex] []= $callback;
     }
 
-    public function parse(): void
+    public function parse(Tokens $Tokens): void
     {
-        foreach ($this->_pTokens as $pToken)
+        foreach ($Tokens as $pToken)
         {
             if ($this->someoneIsListening($pToken))
             {
