@@ -19,7 +19,7 @@ class Tokens implements Iterator, Countable
         $this->validate();
     }
 
-    private function validate()
+    private function validate(): void
     {
         $checkMethod = function($pToken)
         {
@@ -32,32 +32,32 @@ class Tokens implements Iterator, Countable
         array_map($checkMethod, $this->_tokens);
     }
 
-    public function current()
+    public function current(): Token
     {
         return $this->_tokens[$this->_index];
     }
 
-    public function next()
+    public function next(): void
     {
         $this->_index++;
     }
 
-    public function key()
+    public function key(): int
     {
         return $this->_index;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return array_key_exists($this->_index, $this->_tokens);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->_index = 0;
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->_tokens);
     }

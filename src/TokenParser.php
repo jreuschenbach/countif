@@ -15,12 +15,12 @@ class TokenParser
         $this->_pTokens = $pTokenizer;
     }
 
-    public function addListener($tokenIndex, $callback)
+    public function addListener($tokenIndex, $callback): void
     {
         $this->_listener[$tokenIndex] []= $callback;
     }
 
-    public function parse()
+    public function parse(): void
     {
         foreach ($this->_pTokens as $pToken)
         {
@@ -31,12 +31,12 @@ class TokenParser
         }
     }
 
-    private function someoneIsListening(Token $pToken)
+    private function someoneIsListening(Token $pToken): bool
     {
         return array_key_exists($pToken->getId(), $this->_listener);
     }
 
-    private function callListener(array $listeners)
+    private function callListener(array $listeners): void
     {
         foreach ($listeners as $listener)
         {

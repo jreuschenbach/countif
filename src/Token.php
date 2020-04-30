@@ -20,17 +20,17 @@ class Token
         $this->_line = $phpToken[2];
     }
 
-    public function getId()
+    public function getId(): int
     {
         return $this->_id;
     }
 
-    public function getText()
+    public function getText(): string
     {
         return $this->_text;
     }
 
-    public function getLine()
+    public function getLine(): int
     {
         return $this->_line;
     }
