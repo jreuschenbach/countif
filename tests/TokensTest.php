@@ -7,12 +7,12 @@ use jr\countif\InvalidTokenException;
 
 class TokensTest extends TestCase
 {
-    public function testInstance()
+    public function testInstance(): void
     {
         $this->assertInstanceOf(Tokens::class, new Tokens(array()));
     }
 
-    public function testIterable()
+    public function testIterable(): void
     {
         $Tokens = $this->createTokens();
 
@@ -37,7 +37,7 @@ class TokensTest extends TestCase
         return $Tokens;
     }
 
-    public function testInvalidValidation()
+    public function testInvalidValidation(): void
     {
         $catched = false;
 

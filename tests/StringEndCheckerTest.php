@@ -5,12 +5,12 @@ use jr\countif\StringEndChecker;
 
 class StringEndCheckerTest extends TestCase
 {
-    public function testInstance()
+    public function testInstance(): void
     {
         $this->assertInstanceOf(StringEndChecker::class, new StringEndChecker());
     }
 
-    public function testIs()
+    public function testIs(): void
     {
         $StringEndChecker = new StringEndChecker();
         $this->assertTrue($StringEndChecker->is('test.php', '.php'));

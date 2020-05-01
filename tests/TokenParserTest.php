@@ -15,7 +15,7 @@ class TokenParserTest extends TestCase
         $this->assertInstanceOf(TokenParser::class, new TokenParser());
     }
 
-    public function testListener()
+    public function testListener(): void
     {
         $Token = new Token(array(T_IF, 'if', 1));
         $Tokens = new Tokens(array($Token));
@@ -26,7 +26,7 @@ class TokenParserTest extends TestCase
         $this->assertEquals(1, $this->_dummyListenerCalled);
     }
 
-    public function dummyListener()
+    public function dummyListener(): void
     {
         $this->_dummyListenerCalled++;
     }

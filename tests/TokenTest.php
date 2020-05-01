@@ -5,12 +5,12 @@ use jr\countif\Token;
 
 class TokenTest extends TestCase
 {
-    public function testInstance()
+    public function testInstance(): void
     {
         $this->assertInstanceOf(Token::class, new Token(array(T_IF, 'if', 1)));
     }
 
-    public function testDataObject()
+    public function testDataObject(): void
     {
         $pToken = new Token(array(T_IF, 'if', 1));
 

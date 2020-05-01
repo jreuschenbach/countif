@@ -16,13 +16,8 @@ class CountIf
         return $this->_countIf;
     }
 
-    private function processDirectory($path)
+    private function processDirectory($path): void
     {
-        if (!is_dir($path))
-        {
-            throw new InvalidDirectoryException($path);
-        }
-
         $handle = opendir($path);
         while ($filePath = readdir($handle))
         {
@@ -37,12 +32,12 @@ class CountIf
         }
     }
 
-    private function isSubDirectory($dirPath)
+    private function isSubDirectory($dirPath): bool
     {
         return $dirPath != '.' && $dirPath != '..';
     }
 
-    private function isValidPhpFile($filePath)
+    private function isValidPhpFile($filePath): bool
     {
         $StringEndChecker = new StringEndChecker();
 
