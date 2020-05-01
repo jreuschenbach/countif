@@ -25,7 +25,7 @@ class CountIfTest extends TestCase
         {
             $CountIf->count('asd');
         }
-        catch (InvalidDirectoryException $pException)
+        catch (InvalidDirectoryException $Exception)
         {
             $catched = true;
         }

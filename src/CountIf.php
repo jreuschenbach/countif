@@ -30,7 +30,7 @@ class CountIf
             {
                 $this->processFile($path.'/'.$filePath);
             }
-            elseif ($this->isSubDirectory($filePath))
+            elseif (is_dir($path.'/'.$filePath) && $this->isSubDirectory($filePath))
             {
                 $this->processDirectory($path.'/'.$filePath);
             }
@@ -44,8 +44,10 @@ class CountIf
 
     private function isValidPhpFile($filePath)
     {
+        $StringEndChecker = new StringEndChecker();
+
         return is_file($filePath) &&
-            substr_compare($filePath, '.php', 4);
+            $StringEndChecker->is($filePath, '.php');
     }
 
     private function processFile(string $filePath): void

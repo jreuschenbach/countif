@@ -15,7 +15,15 @@ else
     {
         $CountIf = new CountIf();
         $count = $CountIf->count($path);
-        echo $count;
+        echo 'Jedes "if" ist eine persönliche Niederlage für einen Entwickler. ';
+
+        if ($count > 0)
+        {
+            echo 'In '.$path.' hast du '.$count.' Niederlagen erlitten'."\n";
+        }
+        else {
+            echo 'In '.$path.' hast du keine Niederlagen erlitten!'."\n";
+        }
     }
     catch (Exception $pException)
     {
